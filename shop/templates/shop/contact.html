@@ -29,11 +29,11 @@
 </div>
 {% endblock %} {%block js%}
 <script>
-   {%if thank%}
+   {% if thank %}
     alert('Thanks for contact  with us. ');
     localStorage.clear();
     document.location = "/shop/contact";
-    {%endif%}
+    {% endif %}
 </script>
 
 
