@@ -37,6 +37,7 @@ class Contact(models.Model):
 
 class Orders(models.Model):
     order_id = models.AutoField(primary_key=True)
+    amount =models.IntegerField(default=0)
     items_json = models.CharField(max_length=5000)
     name = models.CharField(max_length=90)
     email = models.CharField(max_length=111)
@@ -45,7 +46,7 @@ class Orders(models.Model):
     # state = models.CharField(max_length=111)
     # zip_code = models.CharField(max_length=111)
     phone = models.CharField(max_length=111, default="")
-    desc = models.CharField(max_length=500, default="")
+    desc = models.CharField(max_length=100, default='')
     objects=models.Manager()
 
 

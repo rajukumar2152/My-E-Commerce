@@ -190,6 +190,7 @@ def checkout(request):
     if request.method == "POST":
         items_json = request.POST.get('itemsJson', '')
         name = request.POST.get('name', '')
+        amount = request.POST.get('amount', '')
         email = request.POST.get('email', '')
         address = request.POST.get('address1', '') #+ \
         # " " + request.POST.get('address2', '')
@@ -198,8 +199,9 @@ def checkout(request):
         # zip_code = request.POST.get('zip_code', '')
         desc = request.POST.get('desc', '')
         phone = request.POST.get('phone', '')
+        # Orders ek model hain uske element ko order variable me store kar ke save kar diya 
         order = Orders(items_json=items_json, name=name, email=email,
-                       address=address , phone=phone, desc=desc)
+                       address=address , phone=phone, desc=desc ,amount=amount)
         order.save()
         update = OrderUpdate(order_id=order.order_id,
                              update_desc="The order has been placed")
