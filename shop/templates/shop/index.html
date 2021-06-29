@@ -1,7 +1,7 @@
 {% extends 'shop/basic.html' %} {% block css %} .col-md-3 { display: inline-block; margin-left:-4px; } .carousel-indicators .active { background-color: blue; } .col-md-3 img{ width: 170px; height: 200px; } body .carousel-indicator li{ background-color:
 blue; } body .carousel-indicators{ bottom: 0; } body .carousel-control-prev-icon, body .carousel-control-next-icon{ background-color: blue; } .carousel-control-prev, .carousel-control-next{ top: auto; bottom: auto; padding-top: 222px; } body .no-padding{
 padding-left: 0, padding-right: 0; } {% endblock %} {% block body %} {% load static %}
-<style>
+<!-- <style>
   .col-md-3 img {
     width: 281px;
     height: 241px;
@@ -19,7 +19,7 @@ body{
 .card{
     background-color: rgb(159, 144, 161);
 }
-</style>
+</style> -->
 <div class="container">
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
@@ -39,8 +39,9 @@ body{
                         <div class="card align-items-center" style="width: 18rem;">
                             <img src='/media/{{i.image}}' class="card-img-top" alt="..." >
                             <div class="card-body">
-                                <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
-                                <p class="card-text">{{i.desc|slice:"0:53"|safe}}...</p>
+                                <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name|slice:"0:60"}}...</h5>
+                                <!-- <p class="card-text">{{i.desc|slice:"0:53"|safe}}...</p> -->
+                                <span">Limited time deal</span></span>
 
                                 <!-- <h6 class="card-title" id="pricepr{{i.id}}">Price:<span id="pricepr">{{i.price}}</span> </h6>
                                 <h6 class="card-title" id="pricepr{{i.id}}">Price:<span id="pricepr">{{i.price}}</span> </h6>
