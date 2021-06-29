@@ -8,6 +8,8 @@
 #     pub_date = models.DateField()
 
 from django.db import models
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Product(models.Model):
@@ -16,7 +18,8 @@ class Product(models.Model):
     category = models.CharField(max_length=50, default="")
     subcategory = models.CharField(max_length=50, default="")
     price = models.IntegerField(default=0)
-    desc = models.TextField()
+    # desc = models.TextField()
+    desc=RichTextField(blank=True, null=True)
     pub_date = models.DateField()
     image = models.ImageField(upload_to='shop/images', default="")
 

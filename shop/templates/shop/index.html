@@ -40,12 +40,12 @@ body{
                             <img src='/media/{{i.image}}' class="card-img-top" alt="..." >
                             <div class="card-body">
                                 <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
-                                <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
+                                <p class="card-text">{{i.desc|slice:"0:53"|safe}}...</p>
 
                                 <!-- <h6 class="card-title" id="pricepr{{i.id}}">Price:<span id="pricepr">{{i.price}}</span> </h6>
                                 <h6 class="card-title" id="pricepr{{i.id}}">Price:<span id="pricepr">{{i.price}}</span> </h6>
                                 -->
-                                <h6 class="card-title"> OMR: <span id="pricepr{{i.id}}">{{i.price}}</span></h6>
+                                <h6 class="card-title"> MRP: <span id="pricepr{{i.id}}">{{i.price}}</span></h6>
                                 <!-- is se sirf integer store hoga  -->
 
 
